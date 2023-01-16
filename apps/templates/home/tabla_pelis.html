@@ -19,32 +19,7 @@
 
   <div class="card border-0 shadow">
     <div class="card-body">
-        <div class="table-responsive">
-            <table class="table table-centered table-nowrap mb-0 rounded">
-                <thead class="thead-light">
-        <tr>
-            {% for col in column_names %}
-            <th>{{col}}</th>
-            {% endfor %}
-           
-        </tr>
-                </thead>
-                <tbody>
-        {% for row in row_data %}
-        <tr>
-            {% for col, row_ in zip(column_names, row) %}
-            {% if col == link_column %}
-        
-            {% else %}
-            <td class="border-0">  {{row_}}</td>
-            {% endif %}
-            {% endfor %}
-        </tr>
-        {% endfor %}
-    
-        </tbody>
-        </table>
-        </div>
+
     </div>
 </div>
    
