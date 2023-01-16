@@ -1,0 +1,106 @@
+{% extends "layouts/base-fullscreen.html" %}
+
+{% block title %} Registro {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <main>
+        <section class="vh-lg-100 mt-5 mt-lg-0 bg-soft d-flex align-items-center">
+            <div class="container">
+                <p class="text-center">
+                    <a href="/index" class="d-flex align-items-center justify-content-center">
+                        <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>
+                        Regresar al inicio
+                    </a>
+                </p>
+                <div class="row justify-content-center form-bg-image" data-background-lg="{{ config.ASSETS_ROOT }}/img/illustrations/signin.svg">
+                    <div class="col-12 d-flex align-items-center justify-content-center">
+                        <div class="bg-white shadow border-0 rounded border-light p-4 p-lg-5 w-100 fmxw-500">
+                            <div class="text-center text-md-center mb-4 mt-md-0">
+                                <h1 class="mb-0 h3">
+                                    Crear Cuenta
+                                </h1> 
+                            </div>
+                            
+                            {% if success %}
+
+                                <div class="d-grid">
+                                    <a href="{{ url_for('authentication_blueprint.login') }}" 
+                                       class="btn btn-gray-800">Ingresar</a>
+                                </div>
+
+                            {% else %}
+
+                                <form method="post" action="" class="mt-4">
+                                    
+                                    {{ form.hidden_tag() }}
+
+                                    <div class="form-group mb-4">
+                                        <label for="email">Nombre de usuario</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon1">
+                                                <span class="fas fa-user-circle"></span>
+                                            </span>
+                                            {{ form.username(placeholder="miusuario", class="form-control") }}
+                                        </div>  
+                                    </div>
+
+                                    <!-- Form -->
+                                    <div class="form-group mb-4">
+                                        <label for="email">Correo electrónico</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon1">
+                                                <span class="fas fa-envelope"></span>
+                                            </span>
+                                            {{ form.email(placeholder="ejemplo@email.com", class="input form-control", type="email") }}
+                                        </div>  
+                                    </div>
+                                    <!-- End of Form -->
+                                    <div class="form-group">
+                                        <!-- Form -->
+                                        <div class="form-group mb-4">
+                                            <label for="password">Contraseña</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text" id="basic-addon2">
+                                                    <span class="fas fa-unlock-alt"></span>
+                                                </span>
+                                                {{ form.password(placeholder="Contraseña", class="form-control", type="password") }}
+                                            </div>  
+                                        </div>
+                                        <!-- End of Form -->
+                                        <div class="mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="remember">
+                                                <label class="form-check-label fw-normal mb-0" for="remember">
+                                                    Aceptar <a href="#" class="fw-bold">terminos y condiciones</a>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-grid">
+                                        <button type="submit" name="register" class="btn btn-gray-800">Registrar</button>
+                                    </div>
+                                </form>
+                                <div class="d-flex justify-content-center align-items-center mt-4">
+                                    <span class="fw-normal">
+                                        Ya tienes una cuenta? 
+                                        <a href="{{ url_for('authentication_blueprint.login') }}" class="fw-bold">Ingresa aqui</a>
+                                    </span>
+                                </div>
+                            
+                            {% endif %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

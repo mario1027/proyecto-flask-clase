@@ -1,0 +1,55 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Peliculas {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
+      <div class="d-block mb-4 mb-md-0">
+          <h2 class="h4">Todas las peliculas</h2>
+          <p class="mb-0">Aqui esta la informacion completa de mis peliculas.</p>
+      </div>
+  </div>
+  
+
+
+  <div class="card border-0 shadow">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-centered table-nowrap mb-0 rounded">
+                <thead class="thead-light">
+        <tr>
+            {% for col in column_names %}
+            <th>{{col}}</th>
+            {% endfor %}
+           
+        </tr>
+                </thead>
+                <tbody>
+        {% for row in row_data %}
+        <tr>
+            {% for col, row_ in zip(column_names, row) %}
+            {% if col == link_column %}
+        
+            {% else %}
+            <td class="border-0">  {{row_}}</td>
+            {% endif %}
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    
+        </tbody>
+        </table>
+        </div>
+    </div>
+</div>
+   
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

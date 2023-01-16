@@ -1,0 +1,54 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} UI Forms {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+  <div class="py-4">
+
+      <div class="d-flex justify-content-between w-100 flex-wrap">
+          <div class="mb-3 mb-lg-0">
+              <h1 class="h4">Forms</h1>
+              <p class="mb-0">Dozens of reusable components built to provide buttons, alerts, popovers, and more.</p>
+          </div>
+          
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-12 mb-4">
+          <div class="card border-0 shadow components-section">
+              <div class="card-body"> 
+                <form action="/formularioresp", method="post">    
+                  <div class="row mb-4">
+                       
+                            <div class="col-lg-4 col-sm-6">
+                                <!-- Form -->
+                                <div class="mb-4">
+                                    <label for="id-nombres">Nombres</label>
+                                    <input type="text" class="form-control" name="nombres" id="id-nombres">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6">
+                                <!-- Form -->
+                                <div class="mb-4">
+                                    <label for="apellidos">Apellidos</label>
+                                    <input type="text" class="form-control" name="apellidos" id="apellidos">
+                                </div>
+                            </div>
+                            <button class="btn btn-lg btn-primary" type="submit">Enviar</button>
+                        
+                  </div>
+                </form>
+              </div>
+          </div>
+      </div>
+  </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- Primary Meta Tags -->
+<title>
+    Proyecto de clase
+</title>
+
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="120x120" href="{{ config.ASSETS_ROOT }}/img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ config.ASSETS_ROOT }}/img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ config.ASSETS_ROOT }}/img/favicon/favicon-16x16.png">
+<link rel="manifest" href="{{ config.ASSETS_ROOT }}/img/favicon/site.webmanifest">
+<link rel="mask-icon" href="{{ config.ASSETS_ROOT }}/img/favicon/safari-pinned-tab.svg" color="#ffffff">
+
+<!-- Sweet Alert -->
+<link type="text/css" href="{{ config.ASSETS_ROOT }}/vendor/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+
+<!-- Notyf -->
+<link type="text/css" href="{{ config.ASSETS_ROOT }}/vendor/notyf/notyf.min.css" rel="stylesheet">
+
+<!-- Volt CSS -->
+<link type="text/css" href="{{ config.ASSETS_ROOT }}/css/volt.css" rel="stylesheet">
+
+<!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
+
+</head>
+<body>
+
+    <header class="header-global">
+        <nav id="navbar-main" aria-label="Primary navigation" class="navbar navbar-main navbar-expand-lg navbar-theme-primary pt-4 navbar-dark">
+            <div class="container position-relative">
+                <div class="navbar-collapse collapse me-auto" id="navbar_global">
+                    <div class="navbar-collapse-header">
+                        <div class="row">
+                            <div class="col-6 collapse-brand">
+                                <a href="/">
+                                    <img src="{{ config.ASSETS_ROOT }}/img/brand/light.svg" alt="Volt logo">
+                                </a>
+                            </div>
+                            <div class="col-6 collapse-close">
+                                <a href="#navbar_global" class="fas fa-times" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" title="close" aria-label="Toggle navigation"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+                        <li class="nav-item mr-2">
+                            <a href="/tabla_pelis.html" class="nav-link">Ranking</a>
+                        </li>
+                        <li class="nav-item me-2">
+                            <a href="/settings.html" class="nav-link">Perfil</a>
+                        </li>                        
+                    </ul>
+                </div>
+                <div class="d-flex align-items-center ms-auto">
+                    <a href="/register" 
+                       target="_self" 
+                       class="btn btn-outline-white d-inline-flex align-items-center me-md-3">
+                        Registrate
+                    </a>
+                    <button class="navbar-toggler ml-2" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a href="/login" 
+                       target="_self" 
+                       class="btn btn-outline-secondary d-inline-flex align-items-center me-md-3">
+                        Iniciar sesión
+                    </a>
+                    <button class="navbar-toggler ml-2" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>                  
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="section-header overflow-hidden pt-7 pt-lg-8 pb-9 pb-lg-12 ">
+            <div class="container">
+                
+                <div class="row">
+                    <div class="col-12 text-center">
+                    
+                        <h1 class="fw-bolder">Proyecto de clase</h1>
+                        <h2 class="lead fw-normal text-muted mb-5">Gestiona el ranking de tus peliculas</h2>
+                        
+                    </div>
+                </div>
+            </div>
+            <figure class="position-absolute bottom-0 left-0 w-100 d-none d-md-block mb-n2"><svg class="home-pattern" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 185.4"><path d="M3000,0v185.4H0V0c496.4,115.6,996.4,173.4,1500,173.4S2503.6,115.6,3000,0z"></path></svg></figure>
+            <div>
+                <br><br><br><br>
+            </div>
+            <div class="row justify-content-center mb-5 mb-lg-6">
+                <div class="col-6 col-md-3 text-center mb-4">
+                    <div class="icon icon-shape bg-white shadow-lg rounded mb-4">
+                        <svg class="icon icon-md text-secondary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z"></path></svg>
+                    </div>
+                    <h3 class="fw-bolder">Crea Tu Cuenta</h3>
+                    <p class="text-gray">Facil y Rapido</p>
+                </div>
+                <div class="col-6 col-md-3 text-center mb-4">
+                    <div class="icon icon-shape bg-white shadow-lg rounded mb-4">
+                        <svg class="icon icon-md text-secondary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"></path></svg>
+                    </div>
+                    <h3 class="fw-bolder">Ingresa</h3>
+                    <p class="text-gray">Inicia tu experiencia</p>
+                </div>
+                <div class="col-6 col-md-3 text-center">
+                    <div class="icon icon-shape bg-white shadow-lg rounded mb-4">
+                        <svg class="icon icon-md text-secondary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z"></path></svg>
+                    </div>
+                    <h3 class="fw-bolder">Gestiona tus peliculas</h3>
+                    <p class="text-gray">Agrega Tus Peliculas y Generos</p>
+                </div>
+            </div>
+        </section>
+        <section class="section section-sm pt-0">
+            <div class="container">
+                <div class="row justify-content-center mb-5 mb-lg-6">
+                    <div class="col-12 text-center">
+                        <h2 class="h1 px-lg-5">Ingresa la cantidad de peliculas que desees</h2>
+                        <p class="lead px-lg-10">Tus peliculas favoritas las podras guardar con su genero, y asi no perder su referencia para cuando decidas repetirla</p>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-6 mb-5">
+                        <a href="#" class="page-preview scale-up-2">
+                            <img class="shadow-lg rounded scale" src="{{ config.ASSETS_ROOT }}/img/pages/cinema.jpg" alt="Sign Up page preview">
+                            <div class="text-center show-on-hover rounded-bottom">
+                                <h6 class="m-0 text-center d-inline-flex align-items-center text-white">Cinema<svg class="icon icon-xs ms-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg></h6>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6 mb-5">
+                        <a href="#" class="page-preview scale-up-2">
+                            <img class="shadow-lg rounded scale" src="{{ config.ASSETS_ROOT }}/img/pages/popcorn.jpg" alt="Sign In page preview">
+                            <div class="text-center show-on-hover rounded-bottom">
+                                <h6 class="m-0 text-center d-inline-flex align-items-center text-white">Popcorn<svg class="icon icon-xs ms-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg></h6>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer py-6 bg-gray-800 text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col mb-md-0">
+                    <div class="d-flex text-center justify-content-center align-items-center" role="contentinfo">
+                    <p class="fw-normal font-small mb-0">Copyright © 2022. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    {% include 'includes/scripts.html' %}
+
+</body>
+</html>

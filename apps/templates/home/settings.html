@@ -1,0 +1,200 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Configuración de sessión {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-12 col-xl-8">
+            <div class="card card-body border-0 shadow mb-4">
+                <h2 class="h5 mb-4">Informacion General</h2>
+                <form method="POST" action="/infouser">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div>
+                                <label for="first_name">Nombres</label>
+                                <input class="form-control" id="first_name" name="first_name" type="text" placeholder="Mis nombres" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div>
+                                <label for="last_name">Apellidos</label>
+                                <input class="form-control" id="last_name" name="last_name"type="text" placeholder="Mis apellidos" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-md-6 mb-3">
+                            <label for="birthday">Fecha de nacimiento</label>
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <svg class="icon icon-xs" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                                </span>
+                                <input data-datepicker="" class="form-control" name="birthday" id="birthday" type="text" placeholder="dd/mm/yyyy" required>                                               
+                              </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="gender">Genero</label>
+                            <select class="form-select mb-0" id="gender" aria-label="Gender select example" name="gender">
+                                <option selected>Seleccione...</option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Femenino">Femenino</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input class="form-control" id="email" name="email" type="email" placeholder="name@company.com" value="{{ current_user.email }}" readonly>
+                            </div>
+                        </div> 
+                        <div class="col-md-6 mb-3">
+                            <div class="form-group">
+                                <label for="phone">Telefono movil</label>
+                                <input class="form-control" id="phone" name="phone"type="number" placeholder="9998886633" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <button class="btn btn-outline-primary d-inline-flex align-items-center me-md-3" type="submit">Guardar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="card card-body border-0 shadow mb-4">
+                <h2 class="h5 mb-4">Modificar cuenta</h2>
+               
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <form method="POST" action="/moduser">
+                            <div>
+                                <label for="first_name">Editar usuario</label>
+                                <input class="form-control" id="user" type="user" name="username" placeholder="Nuevo usuario">
+                                <br>
+                                <button class="btn btn-outline-success d-inline-flex align-items-center me-md-3" id="edit_user" type="submit">Guardar usuario</button>
+                            </div>
+                        </form>
+                        </div>
+                    
+                    
+                        <div class="col-md-6 mb-3">
+                            <form method="POST" action="/modpassword">
+                            <div>
+                                <label for="last_name">Editar contraseña</label>
+                                <input class="form-control" id="password" name="password" type="password" placeholder="Nueva contraseña">
+                                <br>
+                                <button class="btn btn-outline-success d-inline-flex align-items-center me-md-3" id="edit_pass" type="submit">Guardar contraseña</button>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                
+            </div>
+            <div class="card card-body border-0 shadow mb-4">
+                <h2 class="h5 mb-4">Borrar Datos</h2>
+                
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <form method="POST", action="/deleimageperfil" >
+                            <div>
+                                <button class="btn btn-outline-danger d-inline-flex align-items-center me-md-3" id="delete_photo" type="submit">Eliminar foto</button>
+                            </div>
+                        </form>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                        <form method="POST", action="/deleteuser">
+                            <div>
+                                <button class="btn btn-outline-danger d-inline-flex align-items-center me-md-3" id="delete_user" type="submit">Eliminar usuario</button>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+               
+            </div>
+        </div>
+        <div class="col-12 col-xl-4">
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="card shadow border-0 text-center p-0">
+                        <div class="profile-cover rounded-top " >
+                            <img src="{{infocover}}" class="profile-cover mx-auto " alt="Image user">
+                        </div>
+                        <div class="card-body pb-5">
+                            <img src="{{infoimage}}" class="avatar-xl rounded-circle mx-auto mt-n7 mb-4" alt="Image user">
+                            <h5 class="h5">
+                                {{info.frist_name+" "+info.last_name}}
+                            </h5>
+                       
+                        </div>
+                      </div>
+                </div>
+                <div class="col-12">
+                    <div class="card card-body border-0 shadow mb-4">
+                        <h2 class="h5 mb-4">Seleccionar foto de perfil</h2>
+                        <div class="d-flex align-items-center">
+                            <div class="me-3">
+                                <!-- Avatar -->
+                                <img class="rounded avatar-xl" src="{{infoimage}}" alt="change avatar">
+                            </div>
+                            <div class="file-field">
+                                <div class="d-flex justify-content-xl-center ms-xl-3">
+                                    <div class="d-flex">
+                                        <form method="POST" action="/regisuserimage" enctype="multipart/form-data">
+                                        <input type="file"  accept=".jpg, .gif, .jpeg, .png" name="avatar" >
+                                        <div class="d-md-block text-left">
+                                            <svg class="icon text-gray-500 me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clip-rule="evenodd"></path></svg>
+                                            <div class="fw-normal text-dark mb-1">Seleccionar imagen</div>
+                                            <div class="text-gray small">JPG, GIF or PNG. Max size of 800K</div>
+                                        </div>
+                                        <div class="mt-3">
+                                            <button class="btn btn-outline-primary d-inline-flex align-items-center me-md-3" type="submit">Guardar</button>
+                                        </div>
+                                    </form>
+                                    </div>
+                                </div>
+                              </div>                                        
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card card-body border-0 shadow">
+                        <h2 class="h5 mb-4">Seleccionar imagen de fondo</h2>
+                        <div class="d-flex align-items-center">
+                            <div class="me-3">
+                                <!-- Avatar -->
+                                <img class="rounded avatar-xl" src="{{infocover}}" alt="change cover">
+                            </div>
+                            <div class="file-field">
+                                <div class="d-flex justify-content-xl-center ms-xl-3">
+                                    <div class="d-flex">
+                                        <form method="POST" action="/regisimagencover" enctype="multipart/form-data">
+                                       
+                                        <input type="file" id="imagecover" name="cover" accept=".jpg, .gif, .jpeg, .png">
+                                        <div class="d-md-block text-left">
+                                            <svg class="icon text-gray-500 me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" ></path></svg>
+                                            <div class="fw-normal text-dark mb-1">Seleccionar imagen</div>
+                                            <div class="text-gray small">JPG, GIF or PNG. Max size of 800K</div>
+                                        </div>
+                                        <div class="mt-3">
+                                            <button class="btn btn-outline-primary d-inline-flex align-items-center me-md-3" type="submit">Guardar</button>
+                                        </div>
+                                    </form>
+                                    </div>
+                                </div>
+                              </div>                                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+{% endblock javascripts %}
